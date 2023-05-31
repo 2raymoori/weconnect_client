@@ -31,7 +31,7 @@ const EditProfile = (props) => {
   const fetchData = async () => {
     try {
       const res = await axios.get(
-        `https://weconnect-api-u9ml.onrender.com/api/profile/curprofile/${id}`
+        `https://friendly-pear-sock.cyclic.app/api/profile/curprofile/${id}`
       );
       console.log("============================");
       const userProfile = res.data.data[0].msg;

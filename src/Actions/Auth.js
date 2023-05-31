@@ -3,8 +3,9 @@ import authToken from "../utils/authToken";
 import { setAlert } from "./Alert";
 import { loadCurPosts, loadOtherPosts } from "./Post";
 import { loadProfiles } from "./Profile.Action";
+const NEW_URL = "https://friendly-pear-sock.cyclic.app/"
 // const NEW_URL = "https://weconnect-api-u9ml.onrender.com/";
-const NEW_URL = "https://weconnect-production.up.railway.app/";
+// const NEW_URL = "https://weconnect-production.up.railway.app/";
 const oldURL = "http://localhost:5001/";
 //Load User
 export const loadUser = () => async (dispatch) => {

@@ -13,17 +13,20 @@ import Modal from "react-bootstrap/Modal";
 const Dashboard = (props) => {
   const [profile, setProfile] = useState({});
   const [loading, setLoading] = useState(true);
-  const [showDelete,setShowDelete] = useState(false);
-  const [deleteData,setDeleteData] = useState({deletionType:0,profileId:"",id2:""});
+  const [showDelete, setShowDelete] = useState(false);
+  const [deleteData, setDeleteData] = useState({
+    deletionType: 0,
+    profileId: "",
+    id2: "",
+  });
 
   const confirmDelete = (deletionType, profileId, id2) => {
     if (deleteData.deletionType === 1) {
       // Experience to delete
-        props.deleteExperience(deleteData.profileId, deleteData.id2);
-
+      props.deleteExperience(deleteData.profileId, deleteData.id2);
     } else {
       // Educationn to delete
-        props.deleteEducation(deleteData.profileId, deleteData.id2);
+      props.deleteEducation(deleteData.profileId, deleteData.id2);
     }
     handleClose();
   };
@@ -34,7 +37,9 @@ const Dashboard = (props) => {
   };
   const loadProfile = async () => {
     try {
-      const res = await axios.get("https://weconnect-api-u9ml.onrender.com/api/profile/me");
+      const res = await axios.get(
+        "https://friendly-pear-sock.cyclic.app/api/profile/me"
+      );
       // console.log(res.data.data[0].msg);
       const curProfile = res.data.data[0].msg;
       console.log(curProfile);
@@ -45,13 +50,13 @@ const Dashboard = (props) => {
       setLoading(false);
     } catch (error) {}
   };
-  const handleClose = ()=>{
+  const handleClose = () => {
     setShowDelete(false);
-  }
-  const deleteItem = (deletionType, profileId, id2)=>{
-      setShowDelete(true);
-    setDeleteData({deletionType,profileId,id2});
-  }
+  };
+  const deleteItem = (deletionType, profileId, id2) => {
+    setShowDelete(true);
+    setDeleteData({ deletionType, profileId, id2 });
+  };
 
   useEffect(() => {
     loadProfile();
@@ -76,9 +81,12 @@ const Dashboard = (props) => {
           <Modal.Body>
             <h2>Are you sure you want to delete this Post?</h2>
             <div>
-
-              <button onClick={handleClose} className={'btn btn-primary'}>Cancel</button>
-              <button onClick={confirmDelete} className={'btn btn-danger'}>Confirm</button>
+              <button onClick={handleClose} className={"btn btn-primary"}>
+                Cancel
+              </button>
+              <button onClick={confirmDelete} className={"btn btn-danger"}>
+                Confirm
+              </button>
             </div>
           </Modal.Body>
         </Modal>
@@ -98,12 +106,17 @@ const Dashboard = (props) => {
           <Fragment>
             <p class="lead">
               <div className="imgContainer">
-              <img
-                  src={props.auth.user.profileImg ?`https://weconnect-production.up.railway.app/pImages/${props.auth.user.profileImg}`:"https://ionicframework.com/docs/img/demos/avatar.svg"}
-                   height={50}  width={10} />
+                <img
+                  src={
+                    props.auth.user.profileImg
+                      ? `https://friendly-pear-sock.cyclic.app/pImages/${props.auth.user.profileImg}`
+                      : "https://ionicframework.com/docs/img/demos/avatar.svg"
+                  }
+                  height={50}
+                  width={10}
+                />
               </div>
-               Welcome{" "}
-              <i>{props.auth.user && props.auth.user.firstName}</i>
+              Welcome <i>{props.auth.user && props.auth.user.firstName}</i>
             </p>
             <div class="dash-buttons">
               <Link to={`/edit-profile/${profile._id}`} class="btn btn-light">
@@ -121,8 +134,12 @@ const Dashboard = (props) => {
 
             {profile.experience.length === 0 ? (
               <div>
-                <p className={"text-center fw-bold text-danger"}>Sorry There is no Experience yet in your profile.</p>
-                <p className={"text-center fw-bold text-danger"}>Kindly click on Add Experience to add an Experience</p>
+                <p className={"text-center fw-bold text-danger"}>
+                  Sorry There is no Experience yet in your profile.
+                </p>
+                <p className={"text-center fw-bold text-danger"}>
+                  Kindly click on Add Experience to add an Experience
+                </p>
               </div>
             ) : (
               <table class="table">
@@ -164,8 +181,12 @@ const Dashboard = (props) => {
             <h2 class="my-2">Education Credentials</h2>
             {profile.education.length === 0 ? (
               <div>
-                <p className={"text-center fw-bold text-danger"}>Sorry There is no Education yet in your profile.</p>
-                <p className={"text-center fw-bold text-danger"}>Kindly click on Add Education to add an Education</p>
+                <p className={"text-center fw-bold text-danger"}>
+                  Sorry There is no Education yet in your profile.
+                </p>
+                <p className={"text-center fw-bold text-danger"}>
+                  Kindly click on Add Education to add an Education
+                </p>
               </div>
             ) : (
               <table class="table">

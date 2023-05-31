@@ -15,7 +15,7 @@ const OtherProfile = (props) => {
         <div class="profile-top bg-primary p-2 rounded-3 shadow">
           <img
             class="round-img my-1"
-            src={ props.profile.other_profile.user.profileImg ? `https://weconnect-production.up.railway.app/pImages/${props.profile.other_profile.user.profileImg}`:`https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Avatar_icon_green.svg/2048px-Avatar_icon_green.svg.png`}
+            src={ props.profile.other_profile.user.profileImg ? `https://friendly-pear-sock.cyclic.app/pImages/${props.profile.other_profile.user.profileImg}`:`https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Avatar_icon_green.svg/2048px-Avatar_icon_green.svg.png`}
             alt="Sory"
           />
           <h1 class="large">

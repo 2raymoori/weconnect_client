@@ -19,7 +19,7 @@ const Profiles = (props) => {
               <div class="profile bg-light shadow p-2 mb-5 bg-body rounded">
                 <img
                   class="round-img"
-                  src= {e.user.profileImg ?`https://weconnect-production.up.railway.app/pImages/${e.user.profileImg}`:"https://ionicframework.com/docs/img/demos/avatar.svg"}
+                  src= {e.user.profileImg ?`https://friendly-pear-sock.cyclic.app/pImages/${e.user.profileImg}`:"https://ionicframework.com/docs/img/demos/avatar.svg"}
                   alt=""
                 />
                 <div>

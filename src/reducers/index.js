@@ -4,3 +4,4 @@ import auth from "./auth";
 import p from "./Profile.Reducer";
 import postReducer from "./Post.Reducer";
 export default combineReducers({ alert, auth, p, postReducer });
+//git rm -r --cached node_modules.

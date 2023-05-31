@@ -1,7 +1,9 @@
 import axios from "axios";
 import { setAlert } from "./Alert";
 // const NEW_URL = "https://weconnect-api-u9ml.onrender.com/";
-const NEW_URL = "https://weconnect-production.up.railway.app/";
+// const NEW_URL = "https://weconnect-production.up.railway.app/";
+const NEW_URL = "https://friendly-pear-sock.cyclic.app/"
+
 const oldURL = "http://localhost:5001/";
 export const createPost = (inputTitle, inputDesc) => async (dispatch) => {
   try {

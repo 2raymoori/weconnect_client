@@ -13,7 +13,7 @@ const Profile = (props) => {
         <div class="rounded-3 shadow profile-top bg-primary p-2">
           <img
             class="round-img my-1"
-            src={props.profile.userProfile.msg.user.profileImg ?`https://weconnect-production.up.railway.app/${props.profile.userProfile.msg.user.profileImg}`:"https://ionicframework.com/docs/img/demos/avatar.svg"}
+            src={props.profile.userProfile.msg.user.profileImg ?`https://friendly-pear-sock.cyclic.app/${props.profile.userProfile.msg.user.profileImg}`:"https://ionicframework.com/docs/img/demos/avatar.svg"}
               alt=""
           />
           <h1 class="large">
